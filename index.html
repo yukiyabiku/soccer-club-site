@@ -89,6 +89,60 @@
             scroll-snap-align: start;
             flex-shrink: 0;
         }
+
+        .banner {
+            display: block;
+            background-color: #ffcc00;
+            color: #003366;
+            text-align: center;
+            padding: 15px 0;
+            font-size: 1.2em;
+            font-weight: bold;
+            text-decoration: none;
+            margin: 20px auto;
+            max-width: 900px;
+            transition: background-color 0.3s ease;
+        }
+
+        .banner:hover {
+            background-color: #ffdb4d;
+        }
+
+        #latest-result {
+            background-color: #f9f9f9;
+            border-left: 5px solid #003366;
+            padding: 20px;
+            margin: 30px auto;
+            max-width: 900px;
+        }
+
+        #latest-result h2 {
+            color: #003366;
+        }
+
+        #latest-result p {
+            margin: 5px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        table th, table td {
+            border: 1px solid #ccc;
+            padding: 8px;
+        }
+
+        table thead {
+            background-color: #003366;
+            color: white;
+        }
+
+        table tbody tr:nth-child(even) {
+            background-color: #f0f8ff;
+        }
     </style>
 </head>
 <body>
@@ -96,16 +150,16 @@
         <img src="5.jpg" alt="ロゴ" class="logo">
         <div class="header-text">
             <h1>千葉工業大学サッカー部</h1>
-            
         </div>
     </header>
 
     <nav>
         <ul>
             <li><a href="#philosophy">部の理念</a></li>
-            <li><a href="#about">チーム紹介</a></li>
-            <li><a href="#members">部員紹介</a></li>
+            <li><a href="#about">部の紹介</a></li>
+            <li><a href="#members">選手紹介</a></li>
             <li><a href="#schedule">年間スケジュール</a></li>
+            <li><a href="#results">戦績</a></li>
             <li><a href="#recruit">新入生へ</a></li>
             <li><a href="#access">アクセス</a></li>
             <li><a href="#contact">お問い合わせ</a></li>
@@ -113,7 +167,6 @@
     </nav>
 
     <main>
-        <!-- 横スクロール写真スライダー -->
         <div class="photo-slider">
             <img src="1.jpg" alt="写真1">
             <img src="2.jpg" alt="写真2">
@@ -121,23 +174,32 @@
             <img src="4.jpg" alt="写真4">
         </div>
 
+        <a href="#results" class="banner">
+            🏆 試合戦績はこちらをチェック！
+        </a>
+
+        <section id="latest-result">
+            <h2>最新の試合結果</h2>
+            <p>2025年6月8日（日） in 茜浜グラウンド</p>
+            <p><strong>千葉工業大学 ? - ? 東邦大学</strong></p>
+        </section>
+
         <section id="philosophy">
             <h2>部の理念</h2>
             <p>
-                千葉工業大学サッカー部は、技術の向上はもちろん、社会人としての人格形成も目指し、チーム一丸となって日々練習に励んでいます。一年生から四年生が同じピッチでプレーをすることや他学科・学部での人間関係を構築していくことも目標にして取り組んでいます！
+                千葉工業大学サッカー部は、技術の向上はもちろん、社会人としての人格形成も目指し、チーム一丸となって日々練習に励んでいます。
             </p>
         </section>
 
         <section id="about">
-            <h2>チーム紹介</h2>
+            <h2>部の紹介</h2>
             <p>
-                本チームは学生主体で運営され、監督や指導者はいませんが、キャプテンを中心に紅白戦をメイン練習しております。公式戦・リーグ戦・練習試合などに参加しています。練習日程は月・火・金の練習で月曜日の練習はリーグ戦に登録する選手のみで活動しております。練習場所は茜浜グラウンドで行っています！
+                本サッカー部は学生主体で運営され、監督や指導者はいませんが、キャプテンを中心に紅白戦をメインに活動中。茜浜グラウンドで週3回練習を行っています。
             </p>
         </section>
 
         <section id="members">
-            <h2>部員紹介</h2>
-            <p>ポジションごとに紹介しています。学年・出身校なども順次掲載予定です。</p>
+            <h2>選手紹介</h2>
             <ul>
                 <li>FW：佐藤龍之介、佐藤太陽、屋比久裕生</li>
                 <li>DF：堀田利興 ほか</li>
@@ -151,15 +213,84 @@
                 <li>6月8日： VS東邦大学 ~リーグ開幕~</li>
                 <li>6月15日： VS麗澤大学</li>
                 <li>6月22日： VS東京理科大学</li>
-                <li>6月29日： VS帝京平成大学</li>
-                <li>7月6日〜8月17日： VS東邦大学（全6戦）</li>
+                <li>6月29日： VS東京情報大学</li>
+                <li>7月6日： VS千葉大学B</li>
+                <li>9月21日： VS東邦大学</li>
+                <li>9月28日： VS麗澤大学</li>
+                <li>10月5日： VS東京理科大学</li>
+                <li>10月12日： VS東京情報大学</li>
+                <li>10月19日： VS千葉大学B</li>
             </ul>
+        </section>
+
+        <section id="results">
+            <h2>戦績（2025年リーグ）</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>順位</th>
+                        <th>チーム名</th>
+                        <th>試合数</th>
+                        <th>勝</th>
+                        <th>引</th>
+                        <th>負</th>
+                        <th>勝ち点</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>千葉工業大学</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>麗澤大学</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>東京理科大学</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>東京情報大学</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>千葉大学B</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                </tbody>
+            </table>
         </section>
 
         <section id="recruit">
             <h2>新入生の皆さんへ</h2>
             <p>
-                サッカーが好きな人、大学でも本気でスポーツに取り組みたい人、ぜひ見学・体験に来てください！初心者やマネージャー希望の方も大歓迎です。
+                サッカーが好きな人、本気で取り組みたい人、初心者・マネージャーも歓迎！ぜひ見学に来てください。
             </p>
         </section>
 
