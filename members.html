@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>選手紹介 - 千葉工業大学サッカー部</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background-color: #f8f8f8;
+    }
+
+    header {
+      background-color: #003366;
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      width: 50px;
+      height: auto;
+      margin-right: 10px;
+    }
+
+    .header-text h1 {
+      font-size: 1.2rem;
+      margin: 0;
+    }
+
+    .menu-toggle {
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      background: white;
+      height: 3px;
+      width: 25px;
+      margin: 4px 0;
+    }
+
+    nav ul {
+      display: none;
+      flex-direction: column;
+      background-color: #0055a5;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul.active {
+      display: flex;
+    }
+
+    nav ul li a {
+      display: block;
+      padding: 14px 20px;
+      color: white;
+      text-decoration: none;
+    }
+
+    nav ul li a:hover {
+      background-color: #0077cc;
+    }
+
+    main {
+      padding: 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .grade-title {
+      font-size: 1.3em;
+      color: #3e3a88;
+      margin: 40px 0 10px;
+      border-bottom: 2px solid #3e3a88;
+    }
+
+    .players-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .player-card {
+      width: 120px;
+      text-align: center;
+    }
+
+    .player-card img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 2px solid #ccc;
+    }
+
+    .player-name {
+      background-color: #3e3a88;
+      color: white;
+      padding: 5px 0;
+      font-size: 0.85em;
+      border-radius: 0 0 50% 50%;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+  </style>
+  <script>
+    function toggleMenu() {
+      document.getElementById('menu-list').classList.toggle('active');
+    }
+  </script>
+</head>
+<body>
+
+  <!-- ヘッダー -->
+  <header>
+    <div style="display: flex; align-items: center;">
+      <img src="5.jpg" alt="ロゴ" class="logo">
+      <div class="header-text">
+        <h1>千葉工業大学サッカー部</h1>
+      </div>
+    </div>
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </header>
+
+  <!-- メニュー -->
+  <nav>
+    <ul id="menu-list">
+      <li><a href="index.html">トップ</a></li>
+      <li><a href="kantoku.html">監督紹介</a></li>
+      <li><a href="members.html">選手紹介</a></li>
+      <li><a href="index.html#schedule">年間スケジュール</a></li>
+       <li><a href="index.html#access">アクセス</a></li>
+      <li><a href="index.html#contact">お問い合わせ</a></li>
+    </ul>
+  </nav>
+
+  <!-- メイン -->
+  <main>
+    <div class="grade-title">1年生</div>
+    <div class="players-grid">
+      <a href="77.html">
+        <div class="player-card">
+          <img src="images/player1.jpg" alt="">
+          <div class="player-name"></div>
+        </div>
+      </a>
+      <a href="2.html">
+        <div class="player-card">
+          <img src="images/player2.jpg" alt="">
+          <div class="player-name"></div>
+        </div>
+      </a>
+      <!-- 他の1年生もここに追加 -->
+    </div>
+
+    <div class="grade-title">2年生</div>
+    <div class="players-grid">
+      <a href="21.html">
+        <div class="player-card">
+          <img src="images/player21.jpg" alt="">
+          <div class="player-name"></div>
+        </div>
+      </a>
+      <a href="22.html">
+        <div class="player-card">
+          <img src="images/player22.jpg" alt="">
+          <div class="player-name"></div>
+        </div>
+      </a>
+      <!-- 他の2年生もここに追加 -->
+    </div>
+
+    <div class="grade-title">3年生</div>
+    <div class="players-grid">
+      <a href="1.html">
+        <div class="player-card">
+          <img src="ryunosuke.jpg" alt="佐藤　龍之介">
+          <div class="player-name">佐藤　龍之介</div>
+        </div>
+      </a>
+      <a href="2.html">
+        <div class="player-card">
+          <img src="images/player2.jpg" alt="">
+          <div class="player-name"></div>
+        </div>
+      </a>
+      <!-- 他の1年生もここに追加 -->
+    </div>
+
+
+    <div class="grade-title">4年生</div>
+    <div class="players-grid">
+      <a href="77.html">
+        <div class="player-card">
+          <img src="images/player1.jpg" alt="">
+          <div class="player-name"></div>
+        </div>
+      </a>
+      <a href="2.html">
+        <div class="player-card">
+          <img src="images/player2.jpg" alt="">
+          <div class="player-name"></div>
+        </div>
+      </a>
+      <!-- 他の1年生もここに追加 -->
+    </div>
+
+
+
+
+
+
+
+
+
+  </main>
+
+</body>
+</html>

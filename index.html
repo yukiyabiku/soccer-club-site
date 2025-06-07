@@ -1,313 +1,301 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-site-verification" content="CBJ0W-ZDa4zwT9NgjF6p0Qb_AXmFG0m1eIvMj5yAHSY" />
-    <title>千葉工業大学サッカー部</title>
-    <style>
-        body {
-            font-family: sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="CBJ0W-ZDa4zwT9NgjF6p0Qb_AXmFG0m1eIvMj5yAHSY" />
+  <title>千葉工業大学サッカー部</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
 
-        header {
-            background-color: #003366;
-            color: white;
-            padding: 10px 20px;
-            display: flex;
-            align-items: center;
-        }
+    header {
+      background-color: #003366;
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-        .logo {
-            width: 50px;
-            height: auto;
-            margin-right: 15px;
-        }
+    .logo {
+      width: 50px;
+      height: auto;
+      margin-right: 10px;
+    }
 
-        .header-text {
-            display: flex;
-            flex-direction: column;
-        }
+    .header-text h1 {
+      font-size: 1.2rem;
+      margin: 0;
+    }
 
-        nav ul {
-            display: flex;
-            justify-content: center;
-            background-color: #0055a5;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
+    .menu-toggle {
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+    }
 
-        nav ul li {
-            margin: 0;
-        }
+    .menu-toggle span {
+      background: white;
+      height: 3px;
+      width: 25px;
+      margin: 4px 0;
+    }
 
-        nav ul li a {
-            display: block;
-            padding: 14px 20px;
-            color: white;
-            text-decoration: none;
-        }
+    nav ul {
+      display: none;
+      flex-direction: column;
+      background-color: #0055a5;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
 
-        nav ul li a:hover {
-            background-color: #0077cc;
-        }
+    nav ul.active {
+      display: flex;
+    }
 
-        section {
-            padding: 40px 20px;
-            max-width: 900px;
-            margin: auto;
-        }
+    nav ul li a {
+      display: block;
+      padding: 14px 20px;
+      color: white;
+      text-decoration: none;
+    }
 
-        footer {
-            text-align: center;
-            padding: 10px;
-            background-color: #f0f0f0;
-            font-size: 0.9em;
-        }
+    nav ul li a:hover {
+      background-color: #0077cc;
+    }
 
-        h2 {
-            color: #003366;
-        }
+    section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
 
-        .photo-slider {
-            display: flex;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            gap: 10px;
-            padding: 10px 20px;
-            background-color: #eee;
-        }
+    footer {
+      text-align: center;
+      padding: 10px;
+      background-color: #f0f0f0;
+      font-size: 0.9em;
+    }
 
-        .photo-slider img {
-            width: 250px;
-            height: auto;
-            border-radius: 8px;
-            scroll-snap-align: start;
-            flex-shrink: 0;
-        }
+    h2 {
+      color: #003366;
+    }
 
-        .banner {
-            display: block;
-            background-color: #ffcc00;
-            color: #003366;
-            text-align: center;
-            padding: 15px 0;
-            font-size: 1.2em;
-            font-weight: bold;
-            text-decoration: none;
-            margin: 20px auto;
-            max-width: 900px;
-            transition: background-color 0.3s ease;
-        }
+    .photo-slider {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 10px;
+      padding: 10px 20px;
+      background-color: #eee;
+    }
 
-        .banner:hover {
-            background-color: #ffdb4d;
-        }
+    .photo-slider img {
+      width: 250px;
+      height: auto;
+      border-radius: 8px;
+      scroll-snap-align: start;
+      flex-shrink: 0;
+    }
 
-        #latest-result {
-            background-color: #f9f9f9;
-            border-left: 5px solid #003366;
-            padding: 20px;
-            margin: 30px auto;
-            max-width: 900px;
-        }
+    .banner {
+      display: block;
+      background-color: #ffcc00;
+      color: #003366;
+      text-align: center;
+      padding: 15px 0;
+      font-size: 1.2em;
+      font-weight: bold;
+      text-decoration: none;
+      margin: 20px auto;
+      max-width: 900px;
+      transition: background-color 0.3s ease;
+    }
 
-        #latest-result h2 {
-            color: #003366;
-        }
+    .banner:hover {
+      background-color: #ffdb4d;
+    }
 
-        #latest-result p {
-            margin: 5px 0;
-        }
+    #latest-result {
+      background-color: #f9f9f9;
+      border-left: 5px solid #003366;
+      padding: 20px;
+      margin: 30px auto;
+      max-width: 900px;
+    }
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            text-align: center;
-        }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: center;
+    }
 
-        table th, table td {
-            border: 1px solid #ccc;
-            padding: 8px;
-        }
+    table th, table td {
+      border: 1px solid #ccc;
+      padding: 8px;
+    }
 
-        table thead {
-            background-color: #003366;
-            color: white;
-        }
+    table thead {
+      background-color: #003366;
+      color: white;
+    }
 
-        table tbody tr:nth-child(even) {
-            background-color: #f0f8ff;
-        }
+    table tbody tr:nth-child(even) {
+      background-color: #f0f8ff;
+    }
 
-        .player-card {
-            text-align: center;
-            width: 120px;
-        }
+    .player-card {
+      text-align: center;
+      width: 120px;
+    }
 
-        .player-card img {
-            width: 100%;
-            border-radius: 50%;
-        }
+    .player-card img {
+      width: 100%;
+      border-radius: 50%;
+    }
 
-        .player-card-name {
-            background-color: #3e3a88;
-            color: white;
-            padding: 5px 0;
-            border-radius: 0 0 50% 50%;
-            font-size: 0.9em;
-        }
-    </style>
+    .player-card-name {
+      background-color: #3e3a88;
+      color: white;
+      padding: 5px 0;
+      border-radius: 0 0 50% 50%;
+      font-size: 0.9em;
+    }
+  </style>
+  <script>
+    function toggleMenu() {
+      document.getElementById('menu-list').classList.toggle('active');
+    }
+  </script>
 </head>
 <body>
-    <header>
-        <img src="5.jpg" alt="ロゴ" class="logo">
-        <div class="header-text">
-            <h1>千葉工業大学サッカー部</h1>
-        </div>
-    </header>
 
-    <nav>
-        <ul>
-            <li><a href="#philosophy">部の理念</a></li>
-            <li><a href="#about">部の紹介</a></li>
-            <li><a href="#coach">監督紹介</a></li>
-            <li><a href="#members">選手紹介</a></li>
-            <li><a href="#schedule">年間スケジュール</a></li>
-            <li><a href="#results">戦績</a></li>
-            <li><a href="#recruit">新入生へ</a></li>
-            <li><a href="#access">アクセス</a></li>
-            <li><a href="#contact">お問い合わせ</a></li>
-        </ul>
-    </nav>
+  <header>
+    <div style="display: flex; align-items: center;">
+      <img src="5.jpg" alt="ロゴ" class="logo">
+      <div class="header-text">
+        <h1>千葉工業大学サッカー部</h1>
+      </div>
+    </div>
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </header>
 
-    <main>
-        <div class="photo-slider">
-            <img src="1.jpg" alt="写真1">
-            <img src="2.jpg" alt="写真2">
-            <img src="3.jpg" alt="写真3">
-            <img src="4.jpg" alt="写真4">
-        </div>
+  <nav>
+    <ul id="menu-list">
+      
+      <li><a href="index.html">トップ</a></li>
+      <li><a href="kantoku.html">監督紹介</a></li> <!-- ←変更 -->
+      <li><a href="members.html">選手紹介</a></li> <!-- ←変更 -->
+      <li><a href="#schedule">年間スケジュール</a></li>
+     
+      
+      <li><a href="#access">アクセス</a></li>
+      <li><a href="#contact">お問い合わせ</a></li>
+    </ul>
+  </nav>
 
-        <a href="#results" class="banner">
-            🏆 試合戦績はこちらをチェック！
-        </a>
+  <main>
+    <div class="photo-slider">
+      <img src="1.jpg" alt="写真1">
+      <img src="2.jpg" alt="写真2">
+      <img src="3.jpg" alt="写真3">
+      <img src="4.jpg" alt="写真4">
+    </div>
 
-        <section id="latest-result">
-            <h2>最新の試合結果</h2>
-            <p>2025年6月8日（日） in 茜浜グラウンド</p>
-            <p><strong>千葉工業大学 ? - ? 東邦大学</strong></p>
-        </section>
+    <a href="#results" class="banner">
+      🏆 試合戦績はこちらをチェック！
+    </a>
 
-        <section id="philosophy">
-            <h2>部の理念</h2>
-            <p>
-                千葉工業大学サッカー部は、技術の向上はもちろん、社会人としての人格形成も目指し、チーム一丸となって日々練習に励んでいます。
-            </p>
-        </section>
+    <section id="latest-result">
+      <h2>最新の試合結果</h2>
+      <p>2025年6月8日（日） in 茜浜グラウンド</p>
+      <p><strong>千葉工業大学 ? - ? 東邦大学</strong></p>
+    </section>
 
-        <section id="about">
-            <h2>部の紹介</h2>
-            <p>
-                本サッカー部は学生主体で運営され、監督や指導者はいませんが、キャプテンを中心に紅白戦をメインに活動中。茜浜グラウンドで週3回練習を行っています。
-            </p>
-        </section>
+    <section id="recruit">
+      <h2>新入生の皆さんへ</h2>
+      <p>
+        サッカーが好きな人、本気で取り組みたい人、初心者・マネージャーも歓迎！ぜひ見学に来てください。
+      </p>
+    </section>
 
-        <section id="coach">
-            <h2>監督紹介</h2>
-            <div style="text-align: center;">
-                <a href="kantoku.html" style="text-decoration: none; color: inherit;">
-                    <div class="player-card">
-                        <img src="hibiki.jpg" alt="佐藤龍之介">
-                        <div class="player-card-name">石川　響</div>
-                    </div>
-                </a>
-                
-            </div>
-        </section>
+    
 
-        <section id="members">
-            <h2>選手紹介</h2>
-            <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
-                <a href="1.html" style="text-decoration: none; color: inherit;">
-                    <div class="player-card">
-                        <img src="ryunosuke.jpg" alt="佐藤龍之介">
-                        <div class="player-card-name">佐藤 龍之介</div>
-                    </div>
-                </a>
-                <!-- 他の選手カードもここに追加 -->
-            </div>
-        </section>
+    
 
-        
+    <section id="schedule">
+      <h2>公式戦スケジュール~2025~</h2>
+      <ul>
+        <li>6月8日： VS東邦大学 ~リーグ開幕~</li>
+        <li>6月15日： VS麗澤大学</li>
+        <li>6月22日： VS東京理科大学</li>
+        <li>6月29日： VS東京情報大学</li>
+        <li>7月6日： VS千葉大学B</li>
+        <li>9月21日： VS東邦大学</li>
+        <li>9月28日： VS麗澤大学</li>
+        <li>10月5日： VS東京理科大学</li>
+        <li>10月12日： VS東京情報大学</li>
+        <li>10月19日： VS千葉大学B</li>
+      </ul>
+    </section>
 
-        <section id="schedule">
-            <h2>公式戦スケジュール~2025~</h2>
-            <ul>
-                <li>6月8日： VS東邦大学 ~リーグ開幕~</li>
-                <li>6月15日： VS麗澤大学</li>
-                <li>6月22日： VS東京理科大学</li>
-                <li>6月29日： VS東京情報大学</li>
-                <li>7月6日： VS千葉大学B</li>
-                <li>9月21日： VS東邦大学</li>
-                <li>9月28日： VS麗澤大学</li>
-                <li>10月5日： VS東京理科大学</li>
-                <li>10月12日： VS東京情報大学</li>
-                <li>10月19日： VS千葉大学B</li>
-            </ul>
-        </section>
+    <section id="results">
+      <h2>戦績（2025年リーグ）</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>順位</th>
+            <th>チーム名</th>
+            <th>試合数</th>
+            <th>勝</th>
+            <th>引</th>
+            <th>負</th>
+            <th>勝ち点</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>千葉工業大学</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+          <tr><td>2</td><td>麗澤大学</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+          <tr><td>3</td><td>東京理科大学</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+          <tr><td>4</td><td>東京情報大学</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+          <tr><td>5</td><td>千葉大学B</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+        </tbody>
+      </table>
+    </section>
 
-        <section id="results">
-            <h2>戦績（2025年リーグ）</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>順位</th>
-                        <th>チーム名</th>
-                        <th>試合数</th>
-                        <th>勝</th>
-                        <th>引</th>
-                        <th>負</th>
-                        <th>勝ち点</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr><td>1</td><td>千葉工業大学</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-                    <tr><td>2</td><td>麗澤大学</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-                    <tr><td>3</td><td>東京理科大学</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-                    <tr><td>4</td><td>東京情報大学</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-                    <tr><td>5</td><td>千葉大学B</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-                </tbody>
-            </table>
-        </section>
+    
 
-        <section id="recruit">
-            <h2>新入生の皆さんへ</h2>
-            <p>
-                サッカーが好きな人、本気で取り組みたい人、初心者・マネージャーも歓迎！ぜひ見学に来てください。
-            </p>
-        </section>
+    <section id="access">
+      <h2>アクセス</h2>
+      <p>
+        千葉工業大学 茜浜グラウンド<br>
+        JR新習志野駅より徒歩15分
+      </p>
+    </section>
 
-        <section id="access">
-            <h2>アクセス</h2>
-            <p>
-                千葉工業大学 茜浜グラウンド<br>
-                JR新習志野駅より徒歩15分
-            </p>
-        </section>
+    <section id="contact">
+      <h2>お問い合わせ</h2>
+      <p>Instagram: cit.soccer</p>
+    </section>
+  </main>
 
-        <section id="contact">
-            <h2>お問い合わせ</h2>
-            <p>Instagram: cit.soccer</p>
-        </section>
-    </main>
+  <footer>
+    <small>&copy; 2025 千葉工業大学サッカー部 All rights reserved.</small>
+  </footer>
 
-    <footer>
-        <small>&copy; 2025 千葉工業大学サッカー部 All rights reserved.</small>
-    </footer>
 </body>
 </html>
