@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>千葉工業大学サッカー部</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #003366;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            width: 50px;
+            height: auto;
+            margin-right: 15px;
+        }
+
+        .header-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            background-color: #0055a5;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 0;
+        }
+
+        nav ul li a {
+            display: block;
+            padding: 14px 20px;
+            color: white;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            background-color: #0077cc;
+        }
+
+        section {
+            padding: 40px 20px;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #f0f0f0;
+            font-size: 0.9em;
+        }
+
+        h2 {
+            color: #003366;
+        }
+
+        .photo-slider {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            gap: 10px;
+            padding: 10px 20px;
+            background-color: #eee;
+        }
+
+        .photo-slider img {
+            width: 250px;
+            height: auto;
+            border-radius: 8px;
+            scroll-snap-align: start;
+            flex-shrink: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="5.jpg" alt="ロゴ" class="logo">
+        <div class="header-text">
+            <h1>千葉工業大学サッカー部</h1>
+            
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#philosophy">部の理念</a></li>
+            <li><a href="#about">チーム紹介</a></li>
+            <li><a href="#members">部員紹介</a></li>
+            <li><a href="#schedule">年間スケジュール</a></li>
+            <li><a href="#recruit">新入生へ</a></li>
+            <li><a href="#access">アクセス</a></li>
+            <li><a href="#contact">お問い合わせ</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- 横スクロール写真スライダー -->
+        <div class="photo-slider">
+            <img src="1.jpg" alt="写真1">
+            <img src="2.jpg" alt="写真2">
+            <img src="3.jpg" alt="写真3">
+            <img src="4.jpg" alt="写真4">
+        </div>
+
+        <section id="philosophy">
+            <h2>部の理念</h2>
+            <p>
+                千葉工業大学サッカー部は、技術の向上はもちろん、社会人としての人格形成も目指し、チーム一丸となって日々練習に励んでいます。一年生から四年生が同じピッチでプレーをすることや他学科・学部での人間関係を構築していくことも目標にして取り組んでいます！
+            </p>
+        </section>
+
+        <section id="about">
+            <h2>チーム紹介</h2>
+            <p>
+                本チームは学生主体で運営され、監督や指導者はいませんが、キャプテンを中心に紅白戦をメイン練習しております。公式戦・リーグ戦・練習試合などに参加しています。練習日程は月・火・金の練習で月曜日の練習はリーグ戦に登録する選手のみで活動しております。練習場所は茜浜グラウンドで行っています！
+            </p>
+        </section>
+
+        <section id="members">
+            <h2>部員紹介</h2>
+            <p>ポジションごとに紹介しています。学年・出身校なども順次掲載予定です。</p>
+            <ul>
+                <li>FW：佐藤龍之介、佐藤太陽、屋比久裕生</li>
+                <li>DF：堀田利興 ほか</li>
+                <li>MF・GK：準備中</li>
+            </ul>
+        </section>
+
+        <section id="schedule">
+            <h2>公式戦スケジュール~2025~</h2>
+            <ul>
+                <li>6月8日： VS東邦大学 ~リーグ開幕~</li>
+                <li>6月15日： VS麗澤大学</li>
+                <li>6月22日： VS東京理科大学</li>
+                <li>6月29日： VS帝京平成大学</li>
+                <li>7月6日〜8月17日： VS東邦大学（全6戦）</li>
+            </ul>
+        </section>
+
+        <section id="recruit">
+            <h2>新入生の皆さんへ</h2>
+            <p>
+                サッカーが好きな人、大学でも本気でスポーツに取り組みたい人、ぜひ見学・体験に来てください！初心者やマネージャー希望の方も大歓迎です。
+            </p>
+        </section>
+
+        <section id="access">
+            <h2>アクセス</h2>
+            <p>
+                千葉工業大学 茜浜グラウンド<br>
+                JR新習志野駅より徒歩15分
+            </p>
+        </section>
+
+        <section id="contact">
+            <h2>お問い合わせ</h2>
+            <p>Instagram: cit.soccer</p>
+        </section>
+    </main>
+
+    <footer>
+        <small>&copy; 2025 千葉工業大学サッカー部 All rights reserved.</small>
+    </footer>
+</body>
+</html>
