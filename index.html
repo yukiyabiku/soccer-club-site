@@ -143,6 +143,24 @@
         table tbody tr:nth-child(even) {
             background-color: #f0f8ff;
         }
+
+        .player-card {
+            text-align: center;
+            width: 120px;
+        }
+
+        .player-card img {
+            width: 100%;
+            border-radius: 50%;
+        }
+
+        .player-card-name {
+            background-color: #3e3a88;
+            color: white;
+            padding: 5px 0;
+            border-radius: 0 0 50% 50%;
+            font-size: 0.9em;
+        }
     </style>
 </head>
 <body>
@@ -158,6 +176,7 @@
             <li><a href="#philosophy">部の理念</a></li>
             <li><a href="#about">部の紹介</a></li>
             <li><a href="#members">選手紹介</a></li>
+            <li><a href="#coach">監督紹介</a></li>
             <li><a href="#schedule">年間スケジュール</a></li>
             <li><a href="#results">戦績</a></li>
             <li><a href="#recruit">新入生へ</a></li>
@@ -198,14 +217,33 @@
             </p>
         </section>
 
+        <section id="coach">
+            <h2>監督紹介</h2>
+            <div style="text-align: center;">
+                <a href="kantoku.html" style="text-decoration: none; color: inherit;">
+                    <div class="player-card">
+                        <img src="hibiki.jpg" alt="佐藤龍之介">
+                        <div class="player-card-name">佐藤 龍之介</div>
+                    </div>
+                </a>
+                
+            </div>
+        </section>
+
         <section id="members">
             <h2>選手紹介</h2>
-            <ul>
-                <li>FW：佐藤龍之介、佐藤太陽、屋比久裕生</li>
-                <li>DF：堀田利興 ほか</li>
-                <li>MF・GK：準備中</li>
-            </ul>
+            <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+                <a href="1.html" style="text-decoration: none; color: inherit;">
+                    <div class="player-card">
+                        <img src="ryunosuke.jpg" alt="佐藤龍之介">
+                        <div class="player-card-name">佐藤 龍之介</div>
+                    </div>
+                </a>
+                <!-- 他の選手カードもここに追加 -->
+            </div>
         </section>
+
+        
 
         <section id="schedule">
             <h2>公式戦スケジュール~2025~</h2>
@@ -238,51 +276,11 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>千葉工業大学</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>麗澤大学</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>東京理科大学</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>東京情報大学</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td>千葉大学B</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                    </tr>
+                    <tr><td>1</td><td>千葉工業大学</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                    <tr><td>2</td><td>麗澤大学</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                    <tr><td>3</td><td>東京理科大学</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                    <tr><td>4</td><td>東京情報大学</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                    <tr><td>5</td><td>千葉大学B</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
                 </tbody>
             </table>
         </section>
