@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>試合結果 - 千葉工業大学サッカー愛好会</title>
+  <style>
+    body { font-family: sans-serif; margin: 0; padding: 0; background-color: #f8f8f8; }
+    header {
+      background-color: #003366;
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      width: 50px;
+      height: auto;
+      margin-right: 10px;
+    }
+    .header-text h1 { font-size: 1.2rem; margin: 0; }
+    .menu-toggle {
+      display: flex; flex-direction: column; cursor: pointer;
+    }
+    .menu-toggle span {
+      background: white; height: 3px; width: 25px; margin: 4px 0;
+    }
+    nav ul {
+      display: none; flex-direction: column; background-color: #0055a5;
+      list-style: none; margin: 0; padding: 0;
+    }
+    nav ul.active { display: flex; }
+    nav ul li a {
+      display: block; padding: 14px 20px; color: white; text-decoration: none;
+    }
+    nav ul li a:hover { background-color: #0077cc; }
+    main { padding: 20px; max-width: 1000px; margin: auto; }
+    table {
+      width: 100%; border-collapse: collapse; text-align: center;
+    }
+    table th, table td {
+      border: 1px solid #ccc; padding: 8px;
+    }
+    table thead { background-color: #003366; color: white; }
+    table tbody tr:nth-child(even) { background-color: #f0f8ff; }
+  </style>
+  <script>
+    function toggleMenu() {
+      document.getElementById('menu-list').classList.toggle('active');
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <div style="display: flex; align-items: center;">
+      <img src="5.jpg" alt="ロゴ" class="logo">
+      <div class="header-text">
+        <h1>千葉工業大学サッカー愛好会</h1>
+      </div>
+    </div>
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </header>
+
+  <nav>
+    <ul id="menu-list">
+      <li><a href="index.html">TOP</a></li>
+      <li><a href="kantoku.html">監督紹介</a></li>
+      <li><a href="members.html">選手紹介</a></li>
+      <li><a href="index.html#schedule">年間スケジュール</a></li>
+      <li><a href="index.html#access">アクセス</a></li>
+      <li><a href="index.html#contact">お問い合わせ</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section id="latest-result">
+      <h2>最新の試合結果</h2>
+      <div id="latest-content">読み込み中...</div>
+    </section>
+
+    <section id="results">
+      <h2>戦績（2025年リーグ）</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>順位</th><th>チーム名</th><th>試合数</th><th>勝</th><th>引</th><th>負</th><th>勝ち点</th>
+          </tr>
+        </thead>
+        <tbody id="results-body"></tbody>
+      </table>
+    </section>
+  </main>
+
+  <script>
+    fetch("https://script.google.com/macros/s/AKfycbyGaZ3oCm7aABMtzG8NvEkBpl3oCxV-IgOOr-nI5wx4zPr5iVuE_roLtKGWNkT17oXy_g/exec")
+      .then(res => res.json())
+      .then(data => {
+        // 最新試合（dateの値がある最初の行）
+        const latest = data.find(row => row.date);
+        const standings = data.filter(row => row.rank); // 戦績部分だけ抽出
+  
+        // 日付を整形（例：2025/6/8）
+        const formattedDate = new Date(latest.date).toLocaleDateString("ja-JP");
+  
+        // 最新の試合結果を表示
+        document.getElementById("latest-content").innerHTML = `
+          <p><strong>${formattedDate} in ${latest.venue}</strong></p>
+          <p><strong>${latest.teamA} ${latest.score} ${latest.teamB}</strong></p>
+        `;
+  
+        // 戦績テーブルを描画
+        const tbody = document.getElementById("results-body");
+        tbody.innerHTML = "";
+        standings.forEach(row => {
+          tbody.innerHTML += `
+            <tr>
+              <td>${row.rank}</td>
+              <td>${row.team}</td>
+              <td>${row.played}</td>
+              <td>${row.wins}</td>
+              <td>${row.draws}</td>
+              <td>${row.losses}</td>
+              <td>${row.points}</td>
+            </tr>
+          `;
+        });
+      })
+      .catch(err => {
+        document.getElementById("latest-content").innerText = "試合結果の読み込みに失敗しました。";
+        console.error(err);
+      });
+  </script>
+  
+</body>
+</html>
